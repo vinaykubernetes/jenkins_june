@@ -18,7 +18,7 @@ pipeline {
         }
         // this will only execute if the pipeline/stage has a "failed" status
         failure {
-            echo "Post activity ..... failed is called"
+            echo "Post activity ..... failed is called"  
         }
         // Always 
         always {
