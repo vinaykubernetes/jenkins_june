@@ -19,3 +19,47 @@ pipeline { //Top level field
         }
     }
 }
+
+
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo "Welcome to build stage"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Welcome to test pipeline"
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

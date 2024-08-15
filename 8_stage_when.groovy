@@ -1,9 +1,10 @@
 // When 
+// The when directive allows you to control the execution of stages based on specific conditions.
 
 pipeline {
-    agent any
+    agent any 
     environment {
-        DEPLOY_TO = 'production'
+        DEPLOY_TO = 'production' 
     }
     stages {
         stage('Deploy') {
@@ -107,7 +108,7 @@ pipeline {
         }
         stage('Deploy to Stage') {
             when {
-                expression {
+                expression { // When we are dealing with branches or when we are dealing with dynamic data then we use expression
                     // This stage should execute with either production or with staging branch
                     BRANCH_NAME ==~ /(production|staging)/
                 }
@@ -118,10 +119,12 @@ pipeline {
         }
     }
 }
+ 
 
 
 
 // allOf
+// allOf requires all specified conditions to be true for the stage to run, making it suitable for strict requirements.
 
 pipeline {
     agent any
@@ -136,7 +139,7 @@ pipeline {
         }
         stage('Deploy to Dev') {
             steps {
-                echo "Deploying to Dev environment"
+                echo "Deploying to Dev environment" 
             }
         }
         stage('Deploy to Stage') {
@@ -186,6 +189,7 @@ pipeline {
 }
 
 //anyOf
+// anyOf requires only one of the specified conditions to be true, allowing for more flexibility in stage execution.
 
 pipeline {
     agent any

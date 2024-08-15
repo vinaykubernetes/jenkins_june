@@ -1,5 +1,5 @@
 // Script allows us to write custom code in groovy
-// This script block should be available in steps block
+// This script block should be available in steps block 
 // If we are having any complex environment, We can use script under steps block
 // Script uses groovy as the programming language
 pipeline { 
@@ -14,7 +14,7 @@ pipeline {
         stage('ScriptedStage') { 
             steps {
                 script {
-                    def course = "DevOps"
+                    def course = "DevOps" 
                     if(course == "DevOps") 
                     {
                         println("Welcome Vinay!, You are enrolled to ${course}")
@@ -40,5 +40,47 @@ if(course == 'DevOps')
 else
     println("Do Enroll")
 */
+
+
+pipeline {
+    agent any
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Just Hello"
+            }
+        }
+        stage('scripting') {
+            steps {
+                script {
+                    def course = 'DevOps' 
+                    if(course == 'DevOps')
+                    {
+                        println("congrats! You are enrolled to ${course}")
+                    }
+                    else {
+
+                        println("Do enroll")
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

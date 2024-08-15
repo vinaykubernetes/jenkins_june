@@ -13,7 +13,7 @@ pipeline { //Top level field
     stages {
         stage('FirstStage') { // Name: Can be a userfriendly name, but needs to be specific for the task performing
             steps {
-                echo "Welcome to first pipeline"
+                echo "Welcome to first pipeline" 
             }
 
         }
@@ -44,7 +44,7 @@ pipeline {
     // The below agent is at pipeline level and applies for all the stages
     agent none
     stages {
-        stage('Build') {
+        stage('Build') { 
             agent {
                 node {
                     label 'mvn-slave'
@@ -87,3 +87,39 @@ pipeline{
 
 // 5*********** 
 
+
+
+
+pipeline {
+    agent {
+        label 'mvn-slave'
+    }
+    stages {
+        stage('label-stage') {
+            steps {
+                sh 'hostname -i'
+            }
+        }
+    }
+}   
+
+
+Pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            agent {
+                node {
+                    label 'mvn-slave'
+                    customWorkspace 'path'
+                }
+            }
+            steps {
+                echo "Building this application"
+                sh 'hostname -i'
+                sh 'cat vinay.txt'
+                git branch: 'main', url: 'path'
+            }
+        }
+    }
+}

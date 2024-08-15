@@ -1,16 +1,17 @@
+// The environment directive in a Jenkins Pipeline is used to define environment variables that can be accessed and used throughout the pipeline. These variables can store information like credentials, file paths, or any other data that might be needed during the build, test, or deployment stages of the pipeline.
 pipeline {
     agent any
     environment {
         // credentials('id'), this id should be the same from jenkins credentials
-        GITHUB_CREDS = credentials('devops-github-creds')
+        GITHUB_CREDS = credentials('devops-github-creds') // credentials = Special helper method
     }
     stages {
         stage('Build') {
             steps {
                 echo "Github Credentials are ${GITHUB_CREDS}"
                 echo "Username is ${GITHUB_CREDS_USR}"
-                echo "Password is ${GITHUB_CREDS_PSW}"
-            }
+                echo "Password is ${GITHUB_CREDS_PSW}" // password will be masked in the output console
+            }  
         }
     }
 }
@@ -24,5 +25,10 @@ withCredentials([usernamePassword(credentialsId: 'devops-github-creds', username
   // or inside double quotes for string interpolation
   echo "username is $USERNAME"
 
-  docker login -u "$MY_USERNAME" -P "MY_PASSWORD"
+  docker login -u "$MY_USERNAME" -P "$MY_PASSWORD" 
 }
+
+
+
+
+ 

@@ -12,7 +12,7 @@ pipeline {
                     }
                 }
                 stage ('FortifyScan') { 
-                    // Here, we can mention labels to run on fortify slave node
+                    // Here, we can mention labels to run on fortify slave node 
                     steps {
                         echo "Executing Fortify Scan"
                         sleep 10
@@ -47,7 +47,7 @@ pipeline {
                 stage ('SonarScan') {
                     steps {
                         echo "Executing Sonar Scan"
-                        sleep 10
+                        sleep 10  
                     }
                 }
                 stage ('FortifyScan') {

@@ -43,7 +43,7 @@ pipeline {
                 echo "You are certified in ${cloud}"
             }
         }
-        stage('SecondStage') {
+        stage('SecondStage') { 
             steps {
                 echo "Welcome $name"
                 echo "You are enrolled to $course course"
