@@ -1,0 +1,4 @@
+workspace
+currentBuild.number
+GIT_COMMIT
+BRANCH_NAME
