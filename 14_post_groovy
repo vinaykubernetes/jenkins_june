@@ -9,7 +9,7 @@ pipeline {
         }
     }
     post {
-        // this will only execute if the pipleline/stage has a "Success" status
+        // this will only execute if the pipleline/stage has a "Success" status 
         // with blue/green in UI
         success {
             // You can keep what ever u want here 

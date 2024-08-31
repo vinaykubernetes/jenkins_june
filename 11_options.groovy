@@ -1,3 +1,4 @@
+// In realtime, we will use options directive very less
 pipeline {
     agent any
     options {

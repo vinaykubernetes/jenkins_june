@@ -1,11 +1,11 @@
-// let write a bit complex one with both input and parameters.
+// lets write a bit complex one with both input and parameters.
 // stage > input and parameters 
 pipeline {
     agent any 
     stages {
         stage ('Deploy to Dev') {
-            steps {
-                echo "Deploying to dev env Succesfully"
+            steps { 
+                echo "Deploying to dev env Succesfully"  
             }
         }
         stage ('Deploy to Prod') {

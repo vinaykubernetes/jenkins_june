@@ -1,4 +1,6 @@
 // This is for parameters example
+// Parameters in Jenkins are essential for customizing build processes and making them dynamic. 
+// They allow users to pass specific values to jobs at runtime, which can significantly enhance flexibility and usability in continuous integration and delivery pipelines.
 pipeline {
     agent any
     parameters {
@@ -28,3 +30,31 @@ pipeline {
     }
 }
 
+
+
+pipeline {
+    agent any
+    parameters {
+        string(name: 'PERSON', defaultValue: 'vinay', description: 'dfkdkjfdb')
+        string(name: , defaultValue: , description: )
+        booleanParam(
+            name: ,
+            defaultValue: ,
+            description: 
+        )
+        choice(
+            name: ,
+            choices: ,
+            description: 
+        )
+    }
+    stages {
+        stage('parameters') {
+            steps {
+                echo "q"
+            }
+        }
+    }
+
+
+}
